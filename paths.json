@@ -5,6 +5,6 @@
     "/content/Chanchal-Universal-Editor/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/Chanchal-Universal-Editor/"
   ]
 }
