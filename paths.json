@@ -1,8 +1,8 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/Chanchal-Universal-Editor/:/",
+    "/content/Chanchal-Universal-Editor/configuration:/.helix/config.json",
+    "/content/Chanchal-Universal-Editor/metadata:/metadata.json"
   ],
   "includes": [
     "/content/aem-boilerplate/"
