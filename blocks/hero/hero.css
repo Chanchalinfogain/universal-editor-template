@@ -15,10 +15,10 @@
   margin-left: 5px;
   margin-right: auto;
   margin-top: 12rem;
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   font-size: 3rem;
   color: #f5f1e9; 
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
 }
 
 .hero picture {
