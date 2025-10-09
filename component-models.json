@@ -214,5 +214,31 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Accordion Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Bordered",
+            "value": "bordered"
+          }
+        ]
+      }
+    ]
   }
 ]

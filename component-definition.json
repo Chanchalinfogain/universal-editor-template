@@ -43,6 +43,18 @@
           }
         },
         {
+          "title": "Accordion",
+          "id": "accordion",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/accordion/v1/accordion",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
           "title": "Button",
           "id": "button",
           "plugins": {
