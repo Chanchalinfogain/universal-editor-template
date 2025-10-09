@@ -240,5 +240,22 @@
         ]
       }
     ]
+  },
+  {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "quotation",
+        "label": "Quotation",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "attribution",
+        "label": "Attribution",
+        "valueType": "string"
+      }
+    ]
   }
 ]
