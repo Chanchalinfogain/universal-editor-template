@@ -236,23 +236,11 @@
     "id": "hotspot",
     "fields": [
       {
-        "component": "container",
-        "name": "hotspot-items",
-        "label": "Hotspot Items",
-        "fields": [
-          {
-            "component": "image",
-            "name": "image",
-            "label": "Background Image",
-            "valueType": "string"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "hotspot-item",
-    "fields": [
+        "component": "image",
+        "name": "backgroundImage",
+        "label": "Background Image",
+        "valueType": "string"
+      },
       {
         "component": "richtext",
         "name": "content",
@@ -261,14 +249,14 @@
       },
       {
         "component": "text",
-        "name": "left",
+        "name": "leftPosition",
         "label": "Left Position (%)",
         "valueType": "string",
         "description": "Position from left (0-100%)"
       },
       {
         "component": "text",
-        "name": "top",
+        "name": "topPosition",
         "label": "Top Position (%)",
         "valueType": "string",
         "description": "Position from top (0-100%)"
