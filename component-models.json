@@ -142,6 +142,23 @@
     ]
   },
   {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Accordion Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Accordion Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -212,105 +229,6 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "accordion",
-    "fields": [
-      {
-        "component": "text",
-        "name": "heading",
-        "label": "Accordion Heading",
-        "valueType": "string"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Default",
-            "value": "default"
-          },
-          {
-            "name": "Bordered",
-            "value": "bordered"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "quote",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "quotation",
-        "label": "Quotation",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "attribution",
-        "label": "Attribution",
-        "valueType": "string"
-      },
-      {
-        "component": "checkbox",
-        "name": "showAsHeading",
-        "label": "Show quote as heading"
-      },
-      {
-        "component": "select",
-        "name": "headingType",
-        "label": "Heading Type",
-        "options": [
-          { "name": "h1", "value": "h1" },
-          { "name": "h2", "value": "h2" },
-          { "name": "h3", "value": "h3" },
-          { "name": "h4", "value": "h4" },
-          { "name": "h5", "value": "h5" },
-          { "name": "h6", "value": "h6" }
-        ],
-        "condition": {
-          "field": "showAsHeading",
-          "operator": "==",
-          "value": true
-        }
-      }
-    ]
-  },
-  {
-    "id": "image-compare",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "leftImage",
-        "label": "Left Image",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "name": "rightImage",
-        "label": "Right Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "leftImageAlt",
-        "label": "Left Image Alt Text"
-      },
-      {
-        "component": "text",
-        "name": "rightImageAlt",
-        "label": "Right Image Alt Text"
-      },
-      {
-        "component": "text",
-        "name": "description",
-        "label": "Description",
-        "description": "Optional description for the image compare block"
       }
     ]
   }

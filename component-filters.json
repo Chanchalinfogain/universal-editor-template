@@ -1,4 +1,3 @@
-
 [
   {
     "id": "main",
@@ -16,12 +15,19 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "accordion",
-      "quote",
-      "hotspot",
-      "breadcrumb",
-      "image-compare"
+      "fragment"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "accordion"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "accordion"
     ]
   },
   {
@@ -42,9 +48,7 @@
       "text",
       "image",
       "button",
-      "title",
-      "accordion",
-      "quote"
+      "title"
     ]
   }
 ]
