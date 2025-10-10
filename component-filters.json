@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "breadcrumb"    
     ]
   },
   {
@@ -17,7 +18,8 @@
       "columns",
       "fragment",
       "accordion",
-      "quote"      
+      "quote",
+      "hotspot"       
     ]
   },
   {
@@ -40,7 +42,7 @@
       "button",
       "title",
       "accordion",
-      "quote"       
+      "quote"
     ]
   }
 ]
