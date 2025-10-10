@@ -110,37 +110,53 @@ export default async function decorate(block) {
   const placeholder = block.querySelector('picture');
   const linkElement = block.querySelector('a');
   
-  // Handle case where no link is provided (Universal Editor context)
-  if (!linkElement || !linkElement.href || linkElement.href === window.location.href) {
-    // Check if there's any text content that might be a URL
+  // Check for Universal Editor model data attributes
+  const videoSrc = block.dataset.src || block.querySelector('[data-src]')?.dataset.src;
+  const videoTitle = block.dataset.title || block.querySelector('[data-title]')?.dataset.title;
+  const autoplayData = block.dataset.autoplay === 'true' || block.querySelector('[data-autoplay="true"]');
+  
+  let link = null;
+  
+  // Priority 1: Use data from Universal Editor model
+  if (videoSrc) {
+    link = videoSrc;
+  }
+  // Priority 2: Use traditional link element
+  else if (linkElement && linkElement.href && linkElement.href !== window.location.href) {
+    link = linkElement.href;
+  }
+  // Priority 3: Check if there's any text content that might be a URL
+  else {
     const textContent = block.textContent.trim();
-    if (textContent && (textContent.includes('youtube') || textContent.includes('vimeo') || textContent.includes('.mp4'))) {
-      // Create a temporary link element with the URL from text
-      const tempLink = document.createElement('a');
-      tempLink.href = textContent;
-      const link = tempLink.href;
-      block.textContent = '';
-      block.dataset.embedLoaded = false;
-      
-      const autoplay = block.classList.contains('autoplay');
-      if (!placeholder || autoplay) {
-        const observer = new IntersectionObserver((entries) => {
-          if (entries.some((e) => e.isIntersecting)) {
-            observer.disconnect();
-            const playOnLoad = autoplay && !prefersReducedMotion.matches;
-            loadVideoEmbed(block, link, playOnLoad, autoplay);
-          }
-        });
-        observer.observe(block);
-      }
-      return;
+    if (textContent && (textContent.includes('youtube') || textContent.includes('vimeo') || textContent.includes('.mp4') || textContent.includes('http'))) {
+      link = textContent;
     }
+  }
+  
+  // If we have a valid video URL, process it
+  if (link) {
+    block.textContent = '';
+    block.dataset.embedLoaded = false;
     
-    block.innerHTML = '<div class="video-placeholder-text">Add a video URL to display content</div>';
+    const autoplay = block.classList.contains('autoplay') || autoplayData;
+    
+    if (!placeholder || autoplay) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          observer.disconnect();
+          const playOnLoad = autoplay && !prefersReducedMotion.matches;
+          loadVideoEmbed(block, link, playOnLoad, autoplay);
+        }
+      });
+      observer.observe(block);
+    }
     return;
   }
   
-  const link = linkElement.href;
+  // Show placeholder if no video URL is provided
+  block.innerHTML = '<div class="video-placeholder-text">📹 Click to add video URL<br><small>Use the properties panel (→) to add YouTube, Vimeo, or MP4 URL</small></div>';
+  
+  // Also clear existing content
   block.textContent = '';
   block.dataset.embedLoaded = false;
 
