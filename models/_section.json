@@ -50,7 +50,22 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "accordion",
+        "quote",
+        "breadcrumb",
+        "image-compare"
+      ]
+    },
+    {
+      "id": "column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "accordion",
+        "quote"
       ]
     }
   ]

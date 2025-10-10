@@ -15,19 +15,22 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "accordion"
+      "fragment",
+      "accordion",
+      "quote",
+      "breadcrumb",
+      "image-compare"
     ]
   },
   {
     "id": "column",
     "components": [
-      "accordion"
+      "text",
+      "image",
+      "button",
+      "title",
+      "accordion",
+      "quote"
     ]
   },
   {
@@ -49,18 +52,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "hotspot"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "hotspot"
     ]
   }
 ]

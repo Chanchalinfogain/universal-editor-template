@@ -231,36 +231,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "hotspot",
-    "fields": [
-      {
-        "component": "image",
-        "name": "backgroundImage",
-        "label": "Background Image",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "content",
-        "label": "Hotspot Content",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "leftPosition",
-        "label": "Left Position (%)",
-        "valueType": "string",
-        "description": "Position from left (0-100%)"
-      },
-      {
-        "component": "text",
-        "name": "topPosition",
-        "label": "Top Position (%)",
-        "valueType": "string",
-        "description": "Position from top (0-100%)"
-      }
-    ]
   }
 ]
