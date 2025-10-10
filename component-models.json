@@ -280,5 +280,38 @@
         }
       }
     ]
+  },
+  {
+    "id": "image-compare",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "leftImage",
+        "label": "Left Image",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "name": "rightImage",
+        "label": "Right Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "leftImageAlt",
+        "label": "Left Image Alt Text"
+      },
+      {
+        "component": "text",
+        "name": "rightImageAlt",
+        "label": "Right Image Alt Text"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Description",
+        "description": "Optional description for the image compare block"
+      }
+    ]
   }
 ]

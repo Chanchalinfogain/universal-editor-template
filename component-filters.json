@@ -1,9 +1,9 @@
+
 [
   {
     "id": "main",
     "components": [
-      "section",
-      "breadcrumb"    
+      "section"
     ]
   },
   {
@@ -19,7 +19,9 @@
       "fragment",
       "accordion",
       "quote",
-      "hotspot"       
+      "hotspot",
+      "breadcrumb",
+      "image-compare"
     ]
   },
   {
