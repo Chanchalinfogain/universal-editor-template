@@ -14,35 +14,51 @@
       }
     }
   },
-  "models": {
-    "id": "hotspot",
-    "fields": [
-      {
-        "component": "image",
-        "name": "image",
-        "label": "Background Image",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "content",
-        "label": "Hotspot Content",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "left",
-        "label": "Left Position (%)",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "top",
-        "label": "Top Position (%)",
-        "valueType": "string"
-      }
-    ]
-  },
+  "models": [
+    {
+      "id": "hotspot",
+      "fields": [
+        {
+          "component": "container",
+          "name": "hotspot-items",
+          "label": "Hotspot Items",
+          "fields": [
+            {
+              "component": "image",
+              "name": "image",
+              "label": "Background Image",
+              "valueType": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hotspot-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "content",
+          "label": "Hotspot Content",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "left",
+          "label": "Left Position (%)",
+          "valueType": "string",
+          "description": "Position from left (0-100%)"
+        },
+        {
+          "component": "text",
+          "name": "top",
+          "label": "Top Position (%)", 
+          "valueType": "string",
+          "description": "Position from top (0-100%)"
+        }
+      ]
+    }
+  ],
   "filters": [
     {
       "id": "section",
@@ -54,6 +70,12 @@
       "id": "column",
       "components": [
         "hotspot"
+      ]
+    },
+    {
+      "id": "hotspot",
+      "components": [
+        "hotspot-item"
       ]
     }
   ]
