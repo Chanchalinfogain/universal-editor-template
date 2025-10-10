@@ -1,6 +1,6 @@
 const video = document.createElement('video');
 
-video.muted = true; 
+video.muted = true;
 
 video.toggleAttribute('autoplay', true);
 video.toggleAttribute('loop', true);
