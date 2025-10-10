@@ -231,5 +231,34 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "hotspot",
+    "fields": [
+      {
+        "component": "image",
+        "name": "image",
+        "label": "Background Image",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "content",
+        "label": "Hotspot Content",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "left",
+        "label": "Left Position (%)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "top",
+        "label": "Top Position (%)",
+        "valueType": "string"
+      }
+    ]
   }
 ]
