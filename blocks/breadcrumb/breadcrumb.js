@@ -41,6 +41,23 @@ export default async function decorate(block) {
     'aria-label': 'Breadcrumb',
   });
   block.innerHTML = '';
+  
+  // Check if we're in Universal Editor context
+  const isEditor = document.body.classList.contains('editor') || window.location.search.includes('editor');
+  
+  if (isEditor) {
+    // Show placeholder content in editor
+    breadcrumb.innerHTML = `
+      <a href="/">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="/products">Products</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>Current Page</span>
+    `;
+    block.append(breadcrumb);
+    return;
+  }
+  
   const HomeLink = createLink({ path: '', name: 'Home', url: window.location.origin });
   const breadcrumbLinks = [HomeLink.outerHTML];
 
@@ -50,7 +67,8 @@ export default async function decorate(block) {
 
     paths.forEach((pathPart) => breadcrumbLinks.push(createLink(pathPart).outerHTML));
     const currentPath = document.createElement('span');
-    currentPath.innerText = document.querySelector('title').innerText;
+    const pageTitle = document.querySelector('title');
+    currentPath.innerText = pageTitle ? pageTitle.innerText : 'Current Page';
     breadcrumbLinks.push(currentPath.outerHTML);
 
     breadcrumb.innerHTML = breadcrumbLinks.join('<span class="breadcrumb-separator">/</span>');

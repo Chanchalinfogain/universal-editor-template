@@ -108,7 +108,39 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
 
 export default async function decorate(block) {
   const placeholder = block.querySelector('picture');
-  const link = block.querySelector('a').href;
+  const linkElement = block.querySelector('a');
+  
+  // Handle case where no link is provided (Universal Editor context)
+  if (!linkElement || !linkElement.href || linkElement.href === window.location.href) {
+    // Check if there's any text content that might be a URL
+    const textContent = block.textContent.trim();
+    if (textContent && (textContent.includes('youtube') || textContent.includes('vimeo') || textContent.includes('.mp4'))) {
+      // Create a temporary link element with the URL from text
+      const tempLink = document.createElement('a');
+      tempLink.href = textContent;
+      const link = tempLink.href;
+      block.textContent = '';
+      block.dataset.embedLoaded = false;
+      
+      const autoplay = block.classList.contains('autoplay');
+      if (!placeholder || autoplay) {
+        const observer = new IntersectionObserver((entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            observer.disconnect();
+            const playOnLoad = autoplay && !prefersReducedMotion.matches;
+            loadVideoEmbed(block, link, playOnLoad, autoplay);
+          }
+        });
+        observer.observe(block);
+      }
+      return;
+    }
+    
+    block.innerHTML = '<div class="video-placeholder-text">Add a video URL to display content</div>';
+    return;
+  }
+  
+  const link = linkElement.href;
   block.textContent = '';
   block.dataset.embedLoaded = false;
 
