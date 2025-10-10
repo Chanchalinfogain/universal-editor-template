@@ -231,5 +231,137 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "text",
+        "name": "separator",
+        "label": "Separator",
+        "valueType": "string",
+        "value": ">"
+      }
+    ]
+  },
+  {
+    "id": "footer",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Footer Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "header",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "logo",
+        "label": "Logo",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "logoAlt",
+        "label": "Logo Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "image-compare",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imageBefore",
+        "label": "Before Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageBeforeAlt",
+        "label": "Before Image Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imageAfter",
+        "label": "After Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAfterAlt",
+        "label": "After Image Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "quote",
+        "label": "Quote Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "author",
+        "label": "Author",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "attribution",
+        "label": "Attribution",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "text",
+        "name": "src",
+        "label": "Video URL",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "poster",
+        "label": "Poster Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Video Title",
+        "valueType": "string"
+      },
+      {
+        "component": "boolean",
+        "name": "autoplay",
+        "label": "Autoplay",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "controls",
+        "label": "Show Controls",
+        "valueType": "boolean",
+        "value": true
+      }
+    ]
   }
 ]

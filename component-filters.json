@@ -19,7 +19,10 @@
       "accordion",
       "quote",
       "breadcrumb",
-      "image-compare"
+      "image-compare",
+      "footer",
+      "header",
+      "video"
     ]
   },
   {
