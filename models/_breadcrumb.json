@@ -1,0 +1,37 @@
+{
+  "definitions": {
+    "title": "Breadcrumb",
+    "id": "breadcrumb",
+    "plugins": {
+      "xwalk": {
+        "page": {
+          "resourceType": "core/franklin/components/block/v1/block",
+          "template": {
+            "name": "Breadcrumb",
+            "model": "breadcrumb"
+          }
+        }
+      }
+    }
+  },
+  "models": {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "text",
+        "name": "separator",
+        "label": "Separator",
+        "valueType": "string",
+        "value": "/",
+        "description": "Character to separate breadcrumb items"
+      },
+      {
+        "component": "boolean",
+        "name": "showHome",
+        "label": "Show Home Link",
+        "valueType": "boolean",
+        "value": true
+      }
+    ]
+  }
+}
