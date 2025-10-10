@@ -42,16 +42,20 @@ export default async function decorate(block) {
   });
   block.innerHTML = '';
   
+  // Get configuration from Universal Editor model
+  const separator = block.dataset.separator || '/';
+  const showHome = block.dataset.showHome !== 'false';
+  
   // Check if we're in Universal Editor context
   const isEditor = document.body.classList.contains('editor') || window.location.search.includes('editor');
   
   if (isEditor) {
-    // Show placeholder content in editor
+    // Show placeholder content in editor with custom separator
+    const homeLink = showHome ? `<a href="/">Home</a><span class="breadcrumb-separator">${separator}</span>` : '';
     breadcrumb.innerHTML = `
-      <a href="/">Home</a>
-      <span class="breadcrumb-separator">/</span>
+      ${homeLink}
       <a href="/products">Products</a>
-      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-separator">${separator}</span>
       <span>Current Page</span>
     `;
     block.append(breadcrumb);
@@ -71,7 +75,7 @@ export default async function decorate(block) {
     currentPath.innerText = pageTitle ? pageTitle.innerText : 'Current Page';
     breadcrumbLinks.push(currentPath.outerHTML);
 
-    breadcrumb.innerHTML = breadcrumbLinks.join('<span class="breadcrumb-separator">/</span>');
+    breadcrumb.innerHTML = breadcrumbLinks.join(`<span class="breadcrumb-separator">${separator}</span>`);
     block.append(breadcrumb);
   }, 1000);
 }

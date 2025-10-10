@@ -111,8 +111,12 @@ export default async function decorate(block) {
   const linkElement = block.querySelector('a');
   
   // Check for Universal Editor model data attributes
-  const videoSrc = block.dataset.src || block.querySelector('[data-src]')?.dataset.src;
-  const videoTitle = block.dataset.title || block.querySelector('[data-title]')?.dataset.title;
+  const videoSrc = block.dataset.videoUrl || block.dataset.src || 
+                   block.querySelector('[data-video-url]')?.dataset.videoUrl ||
+                   block.querySelector('[data-src]')?.dataset.src;
+  const videoTitle = block.dataset.videoTitle || block.dataset.title || 
+                     block.querySelector('[data-video-title]')?.dataset.videoTitle ||
+                     block.querySelector('[data-title]')?.dataset.title;
   const autoplayData = block.dataset.autoplay === 'true' || block.querySelector('[data-autoplay="true"]');
   
   let link = null;

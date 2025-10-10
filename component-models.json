@@ -240,7 +240,15 @@
         "name": "separator",
         "label": "Separator",
         "valueType": "string",
-        "value": ">"
+        "value": "/",
+        "description": "Character to separate breadcrumb items"
+      },
+      {
+        "component": "boolean",
+        "name": "showHome",
+        "label": "Show Home Link",
+        "valueType": "boolean",
+        "value": true
       }
     ]
   },
@@ -332,9 +340,10 @@
     "fields": [
       {
         "component": "text",
-        "name": "src",
+        "name": "videoUrl",
         "label": "Video URL",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "Enter YouTube, Vimeo, or direct MP4 URL"
       },
       {
         "component": "reference",
@@ -345,7 +354,7 @@
       },
       {
         "component": "text",
-        "name": "title",
+        "name": "videoTitle",
         "label": "Video Title",
         "valueType": "string"
       },
